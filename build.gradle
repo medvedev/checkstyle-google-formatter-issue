@@ -1,0 +1,35 @@
+plugins {
+    id 'com.github.sherter.google-java-format' version '0.6'
+    id 'java'
+    id 'checkstyle'
+}
+
+group 'com.github.medvedev'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+googleJavaFormat {
+    toolVersion = "1.4"
+}
+
+checkstyle {
+    toolVersion = "8.2"
+    // get the google_checks.xml file from the actual tool we're invoking
+    config = resources.text.fromArchiveEntry(configurations.checkstyle[0], 'google_checks.xml')
+    maxErrors = 0
+    maxWarnings = 0
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2'
+}
