@@ -11,5 +11,8 @@ Output errors (full paths replaced with "..."):
 [ant:checkstyle] [WARN] .../Test.java:12: '}' has incorrect indentation level 2, expected level should be 4. [Indentation]
 ```
 
-Related checkstyle issue:  
-https://github.com/checkstyle/checkstyle/issues/5171
+Related google java formetter issue:  
+https://github.com/google/google-java-format/issues/159  
+
+Source of truth, requiring "4 spaces or more" for indentation of wrapped line:  
+https://google.github.io/styleguide/javaguide.html#s4.5.2-line-wrapping-indent
